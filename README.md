@@ -33,9 +33,8 @@
 <p align="left">First, you run this command on your server<br><br></p> 
 
 ```bash
-bash <(curl -Ls https://github.com/AC-Lover/backup/raw/main/backup.sh)
+bash <(curl -Ls https://github.com/umutelter458/backup/raw/main/backup.sh)
 ``` 
-
 ###
 
 <h3 align="left">Step 2 : Token setting</h3>
