@@ -135,7 +135,7 @@ EOF
       ZIP="zip -r /root/ac-backup-m.zip ${dir}/* /var/lib/marzban/* /opt/marzban/.env"
 fi
 
-ACLover="marzban backup"
+Legacy="marzban backup"
 
 # x-ui backup
 # ساخت فایل پشتیبانی برای نرم‌افزار X-UI و ذخیره آن در فایل ac-backup.zip
@@ -159,7 +159,8 @@ else
 fi
 
 ZIP="zip /root/ac-backup-x.zip ${dbDir}/x-ui.db ${configDir}/config.json"
-ACLover="x-ui backup"
+legacy
+="x-ui backup"
 
 # hiddify backup
 # ساخت فایل پشتیبانی برای نرم‌افزار Hiddify و ذخیره آن در فایل ac-backup.zip
@@ -183,7 +184,7 @@ zip /root/ac-backup-h.zip /opt/hiddify-manager/hiddify-panel/backup/\$latest_fil
 
 EOF
 )
-ACLover="hiddify backup"
+legacy="hiddify backup"
 else
 echo "Please choose m or x or h only !"
 exit 1
@@ -201,7 +202,7 @@ trim() {
 }
 
 IP=$(ip route get 1 | sed -n 's/^.*src \([0-9.]*\) .*$/\1/p')
-caption="${caption}\n\n${ACLover}\n<code>${IP}</code>\nCreated by Legacy"
+caption="${caption}\n\n${Legacy}\n<code>${IP}</code>\nCreated by Legacy"
 comment=$(echo -e "$caption" | sed 's/<code>//g;s/<\/code>//g')
 comment=$(trim "$comment")
 
